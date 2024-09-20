@@ -1,0 +1,158 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--background-color); /* Match global background */
+  flex-grow: 1; /* Allows the container to grow and fill available space */
+  width: 100%;   /* Full width */
+  padding: 20px; /* Optional padding for spacing */
+
+  @media (max-width: 600px) {
+    padding: 10px;
+  }
+}
+
+.header {
+  font-size: 2.5rem;
+  color: var(--text-color);
+  margin-bottom: 20px; /* Reduced margin for better spacing */
+  text-align: center;
+
+  @media (max-width: 600px) {
+    font-size: 2rem;
+  }
+}
+
+.card {
+  background-color: var(--card-bg-color);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px; /* Increased max-width for larger viewports */
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 800px) {
+    max-width: 90%;
+    height: auto;
+  }
+
+  @media (max-width: 600px) {
+    padding: 20px;
+  }
+}
+
+.inputContainer {
+  display: flex;
+  margin-bottom: 20px;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
+}
+
+.input {
+  flex-grow: 1;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: 1px solid var(--input-border-color);
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+
+  @media (max-width: 600px) {
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 10px;
+  }
+}
+
+.addButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background-color: var(--add-button-bg-color);
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-ease);
+
+  &:hover {
+    background-color: var(--add-button-hover-bg-color);
+  }
+
+  @media (max-width: 600px) {
+    border-radius: 5px;
+  }
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  max-height: 300px; /* Scrollable list if too long */
+  overflow-y: auto;
+
+  @media (max-width: 800px) {
+    max-height: 200px;
+  }
+
+  @media (max-width: 600px) {
+    max-height: 150px;
+  }
+}
+
+.todoItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.todoText {
+  flex-grow: 1;
+  font-size: 1rem;
+  color: var(--text-color);
+  cursor: pointer;
+
+  &.completed {
+    text-decoration: line-through;
+    color: #777;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+.deleteButton {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  border: none;
+  background-color: var(--delete-button-bg-color);
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color var(--transition-duration) var(--transition-ease);
+
+  &:hover {
+    background-color: var(--delete-button-hover-bg-color);
+  }
+
+  @media (max-width: 600px) {
+    align-self: flex-end;
+  }
+}
+
+.noTodos {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
